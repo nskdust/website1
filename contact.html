@@ -30,16 +30,50 @@
             padding: 20px;
             text-align: center;
         }
+        
+        /* NEW: Flexbox layout for side-by-side columns */
+        .contact-layout {
+            display: flex;
+            flex-wrap: wrap; /* Allows columns to stack on small screens */
+            justify-content: center;
+            gap: 30px; /* Space between the text column and image column */
+            max-width: 1000px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        /* NEW: The left column for text */
+        .contact-text-column {
+            flex: 1; /* Tells this column to take up available space */
+            min-width: 300px; /* Stops it from getting too squished */
+        }
+
+        /* NEW: The right column for images */
+        .contact-image-column {
+            flex: 0 0 350px; /* Sets a fixed width of 350px for the images */
+            display: flex;
+            flex-direction: column; /* Stacks the side images vertically */
+            gap: 20px;
+        }
+
+        .contact-image-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* UPDATED: Adjusted margins to fit inside the new column */
         .contact-info, .social-media, .faq {
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 8px;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
+            margin-bottom: 20px; /* Space between each text box */
             box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            text-align: left;
         }
+
         .contact-info h2, .social-media h2, .faq h2 {
             text-align: center;
             color: #333;
@@ -77,35 +111,46 @@
     <div class="container">
         <h1>Contact Video Game Geeks</h1>
 
-        <div class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>We'd love to hear from you! Reach out to us through any of the methods below:</p>
-            <p><strong>Phone:</strong> (123) 456-7890</p>
-            <p><strong>Email:</strong> info@videogamegeeks.com</p>
-            <p><strong>Address:</strong> 123 Gaming Lane, Gamertown, GT 98765</p>
-            <p><strong>Store Hours:</strong> Mon-Sat: 10 AM - 8 PM | Sun: 11 AM - 6 PM</p>
-        </div>
+        <div class="contact-layout">
 
-        <div class="social-media">
-            <h2>Follow Us!</h2>
-            <p>Stay updated with the latest games, events, and promotions by following us on social media:</p>
-            <a href="https://facebook.com/videogamegeeks" target="_blank">Facebook</a>
-            <a href="https://twitter.com/videogamegeeks" target="_blank">Twitter</a>
-            <a href="https://instagram.com/videogamegeeks" target="_blank">Instagram</a>
-            <a href="https://youtube.com/videogamegeeks" target="_blank">YouTube</a>
-        </div>
+            <div class="contact-text-column">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We'd love to hear from you! Reach out to us through any of the methods below:</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Email:</strong> info@videogamegeeks.com</p>
+                    <p><strong>Address:</strong> 123 Gaming Lane, Gamertown, GT 98765</p>
+                    <p><strong>Store Hours:</strong> Mon-Sat: 10 AM - 8 PM | Sun: 11 AM - 6 PM</p>
+                </div>
 
-        <div class="faq">
-            <h2>Suggested Questions to Ask</h2>
-            <p>Not sure what to ask? Here are some common inquiries:</p>
-            <ul>
-                <li>"Do you have [specific game/console] in stock?"</li>
-                <li>"What are your current trade-in policies for games and consoles?"</li>
-                <li>"Are you hosting any gaming events or tournaments soon?"</li>
-                <li>"Can you recommend a game based on my preferences (e.g., RPGs, FPS, indie)?"</li>
-                <li>"What are your policies for pre-ordering new releases?"</li>
-                <li>"Do you offer repairs for consoles or accessories?"</li>
-            </ul>
+                <div class="social-media">
+                    <h2>Follow Us!</h2>
+                    <p>Stay updated with the latest games, events, and promotions by following us on social media:</p>
+                    <a href="https://facebook.com/videogamegeeks" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/videogamegeeks" target="_blank">Twitter</a>
+                    <a href="https://instagram.com/videogamegeeks" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/videogamegeeks" target="_blank">YouTube</a>
+                </div>
+
+                <div class="faq">
+                    <h2>Suggested Questions to Ask</h2>
+                    <p>Not sure what to ask? Here are some common inquiries:</p>
+                    <ul>
+                        <li>"Do you have [specific game/console] in stock?"</li>
+                        <li>"What are your current trade-in policies for games and consoles?"</li>
+                        <li>"Are you hosting any gaming events or tournaments soon?"</li>
+                        <li>"Can you recommend a game based on my preferences (e.g., RPGs, FPS, indie)?"</li>
+                        <li>"What are your policies for pre-ordering new releases?"</li>
+                        <li>"Do you offer repairs for consoles or accessories?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-image-column">
+                <img src="contact_map.jpg" alt="Map to Video Game Geeks">
+                <img src="contact_store_inside.jpg" alt="Inside Video Game Geeks store">
+            </div>
+
         </div>
     </div>
 </body>
